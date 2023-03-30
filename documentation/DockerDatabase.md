@@ -23,7 +23,10 @@ echo -e "Starting Database\n"
 sudo docker compose up -d
 ```
 To get Database logs:
-``sudo docker logs postgres -f``
+```shell
+#!/bin/bash
+sudo docker logs postgres -f
+```
 
 ## JDBC
 
