@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/testService")
-public class WeatherController {
+public class TestService {
 
     @GetMapping("/hello")
     public String greet() {

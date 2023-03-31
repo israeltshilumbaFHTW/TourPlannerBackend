@@ -10,8 +10,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+
 @Entity
-public class Weather{
+public class Weather {
     @Id
     @SequenceGenerator(
             name = "weather_id_sequence",
