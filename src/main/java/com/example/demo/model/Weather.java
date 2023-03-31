@@ -1,8 +1,6 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,11 +11,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class WeatherModel {
+public class Weather{
     @Id
-    @GeneratedValue
+    @SequenceGenerator(
+            name = "weather_id_sequence",
+            sequenceName = "weather_id_sequence"
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "weather_id_sequence"
+    )
     private Integer id;
     private String location;
     private Integer degree;
-
 }

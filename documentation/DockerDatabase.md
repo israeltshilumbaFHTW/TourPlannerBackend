@@ -44,3 +44,35 @@ Um es hinzuzufügen im *pom.xml* file unter ``<dependencies>``:
     <artifactId>postgresql</artifactId>
 </dependency>
 ```
+
+Nun muss das *application.yml* file angepasst werden, damit es sich mit der DB verbinden kann.
+
+```yaml
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tour_planner
+    username: postgres
+    password: pw123456
+  jpa:
+    hibernate:
+      ddl-auto: create-drop #drops tables when DB is terminated
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+      show-sql: true #shows sql code
+  main:
+    web-application-type: servlet
+```
+
+Wenn man den Server startet, kommt es zu einem Error, da es die DB *tour_planner* nicht gibt.
+Um sie zu erstellen:
+
+```shell
+#!/bin/bash
+docker exec -it postgres bash
+psql -U postgres #-U means user
+\l #is going to list DB
+
+CREATE DATABASE tour_planner;
+```
