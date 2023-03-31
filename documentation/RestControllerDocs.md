@@ -31,7 +31,7 @@ Optional kann man auch das Keyword:
 
 Das heißt dann nur, dass wenn man einen Request macht, diese auf den Pfad ``localhost:8080/example/hello`` gehen müsste
 
-dann über jeder Funktion, die einen Pfad behandelt
+Dann über jeder Funktion, die einen Pfad behandelt
 <p>
 
 ``@GetMapping("/path")``

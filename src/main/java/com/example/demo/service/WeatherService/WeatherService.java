@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/weather")
 public class WeatherService {
@@ -26,5 +25,4 @@ public class WeatherService {
     public Weather addWeather(@RequestBody Weather weather) {
         return this.weatherController.addWeather(weather);
     }
-    record GreetingJsonResponse(String greetings){}
 }
