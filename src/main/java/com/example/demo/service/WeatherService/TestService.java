@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.WeatherService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/testService")
-public class HelloWorldController {
+public class WeatherController {
 
     @GetMapping("/hello")
     public String greet() {
