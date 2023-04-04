@@ -16,7 +16,7 @@ curl -X POST \
             "imageUrl": "https://www.example.com/image.jpg",
             "imageType": "jpg"
         }
-    }'
+    }' | jq .
 
 curl -X POST \
   http://localhost:8080/tours \
@@ -33,7 +33,7 @@ curl -X POST \
             "imageUrl": "https://www.example.com/image.jpg",
             "imageType": "jpg"
         }
-    }'
+    }' | jq .
 
 curl -X POST \
   http://localhost:8080/tours \
@@ -50,6 +50,6 @@ curl -X POST \
             "imageUrl": "https://www.example.com/image.jpg",
             "imageType": "jpg"
         }
-    }'
+    }' | jq .
 
-curl http://localhost:8080/tours
+curl http://localhost:8080/tours | jq .
