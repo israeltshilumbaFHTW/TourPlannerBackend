@@ -28,4 +28,10 @@ public class TourController {
         }
         return tourList;
     }
+
+    public Tour getTour(Integer id) {
+        Tour tour = (Tour) tourRepo.findById(id).orElse(null);
+
+        return tour;
+    }
 }

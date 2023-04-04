@@ -22,11 +22,15 @@ public class TourService {
         return tourController.getAllTours();
     }
 
+    @GetMapping("/{id}")
+    public Tour getAllTours(@PathVariable Integer id) {
+        return tourController.getTour(id);
+    }
     @PostMapping("")
-    public ResponseEntity<Void> addTour(@RequestBody Tour tour) {
+    public ResponseEntity<String> addTour(@RequestBody Tour tour) {
         Boolean success = this.tourController.addTour(tour);
         if(success) {
-            return ResponseEntity.status(HttpStatus.CREATED).build();
+            return ResponseEntity.ok("successfully added");
         } else {
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }
