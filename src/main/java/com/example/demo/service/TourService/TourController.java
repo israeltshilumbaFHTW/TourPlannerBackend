@@ -30,8 +30,7 @@ public class TourController {
     }
 
     public Tour getTour(Integer id) {
-        Tour tour = (Tour) tourRepo.findById(id).orElse(null);
 
-        return tour;
+        return (Tour) tourRepo.findById(id).orElse(null);
     }
 }

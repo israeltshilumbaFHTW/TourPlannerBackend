@@ -12,6 +12,7 @@ curl -X POST \
         "transportType": "Walking",
         "distance": 5.0,
         "estimatedTime": 1.5,
+        "date": "2023-04-07",
         "routeImage": {
             "imageUrl": "https://www.example.com/image.jpg",
             "imageType": "jpg"
@@ -29,10 +30,11 @@ curl -X POST \
         "transportType": "Walking",
         "distance": 3.0,
         "estimatedTime": 1.0,
+        "date": "2023-04-07",
         "routeImage": {
             "imageUrl": "https://www.example.com/image.jpg",
             "imageType": "jpg"
-        }
+        },
     }' | jq .
 
 curl -X POST \
@@ -46,10 +48,12 @@ curl -X POST \
         "transportType": "Driving",
         "distance": 600.0,
         "estimatedTime": 10.0,
+        "date": "2023-04-07",
         "routeImage": {
             "imageUrl": "https://www.example.com/image.jpg",
             "imageType": "jpg"
         }
     }' | jq .
 
+echo -e "GET Tours"
 curl http://localhost:8080/tours | jq .
