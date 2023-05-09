@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -28,7 +29,7 @@ public class TourLog {
     private Double rating;
 
     @ManyToOne
-    @JsonIgnoreProperties("tourLogList")
+    @JsonIgnore
     @JoinColumn(name = "tour_id", nullable = true)
     private Tour tour;
 }

@@ -38,7 +38,6 @@ public class Tour {
     private String date;
 
     @OneToMany(mappedBy = "tour", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("tour")
     private List<TourLog> tourLogList;
 
 }
