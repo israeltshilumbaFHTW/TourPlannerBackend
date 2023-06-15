@@ -16,6 +16,9 @@ public class TourController {
     }
 
     public Boolean addTour(Tour tour) {
+        //do MapQuest Logic here
+
+        System.out.println(tour.toString());
         this.tourRepo.save(tour);
         return true;
     }

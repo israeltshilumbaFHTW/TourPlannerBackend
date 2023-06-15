@@ -34,8 +34,13 @@ public class Tour {
     private String toLocation;
     private String transportType;
     private Double distance;
-    private Double estimatedTime;
+    private String estimatedTime;
     private String date;
+    @Lob
+    private String imageUrl;
+    private String routeInformation;
+    private Integer popularity;
+    private Double childFriendliness;
 
     @OneToMany(mappedBy = "tour", cascade = CascadeType.ALL)
     private List<TourLog> tourLogList;

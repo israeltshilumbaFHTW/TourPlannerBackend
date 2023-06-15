@@ -1,8 +1,8 @@
 package com.example.demo.service.TourService;
 
 import com.example.demo.model.Tour;
+import com.example.demo.service.Enums.ResponseMessage;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +30,7 @@ public class TourService {
     public ResponseEntity<String> addTour(@RequestBody Tour tour) {
         Boolean success = this.tourController.addTour(tour);
         if(success) {
-            return ResponseEntity.ok("successfully added");
+            return ResponseEntity.ok(ResponseMessage.POST_TOUR_SUCCESS.getResponseStatus());
         } else {
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }

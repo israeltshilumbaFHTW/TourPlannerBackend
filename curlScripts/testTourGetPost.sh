@@ -9,14 +9,11 @@ curl -X POST \
         "description": "A tour of the beautiful city of Paris",
         "fromLocation": "Paris, France",
         "toLocation": "Eiffel Tower, Paris, France",
-        "transportType": "Walking",
+        "transportType": "pedestrian",
         "distance": 5.0,
         "estimatedTime": 1.5,
         "date": "2023-04-07",
-        "routeImage": {
-            "imageUrl": "https://www.example.com/image.jpg",
-            "imageType": "jpg"
-        }
+        "imageUrl": "https://www.mapquestapi.com/staticmap/v5/map?start=San+Francisco,CA&end=Los+Angeles,JP&routeArc=false&size=800,600@2x&key=nathu9TckDPtj5j4LKlMMv2Zh0nxDlYg"
     }' | jq .
 
 curl -X POST \
