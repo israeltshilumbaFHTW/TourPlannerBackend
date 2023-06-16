@@ -35,4 +35,13 @@ public class TourService {
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteTour(@PathVariable Integer id) {
+        Boolean success = tourController.deleteTour(id);
+        if(success) {
+            return ResponseEntity.ok(ResponseMessage.DELETE_TOUR_SUCCESS.getResponseStatus());
+        } else {
+            return ResponseEntity.badRequest().body(ResponseMessage.DELETE_TOUR_FAIL.getResponseStatus());
+        }
+    }
 }
