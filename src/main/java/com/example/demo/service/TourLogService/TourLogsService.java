@@ -1,6 +1,7 @@
 package com.example.demo.service.TourLogService;
 
 import com.example.demo.model.TourLog;
+import com.example.demo.service.Enums.ResponseMessage;
 import com.example.demo.service.TourService.TourRepo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -31,6 +32,15 @@ public class TourLogsService {
             return ResponseEntity.ok("successfully added");
         } else {
             return ResponseEntity.status((HttpStatus.CONFLICT)).build();
+        }
+    }
+    @DeleteMapping("/delete/{tourLog_id}")
+    public ResponseEntity<String> deleteTourLog(@PathVariable Integer tourLog_id) {
+        Boolean success = tourLogsController.deleteTourLog(tourLog_id);
+        if(success) {
+            return ResponseEntity.ok(ResponseMessage.DELETE_TOUR_LOG_SUCCESS.getResponseStatus());
+        } else {
+            return ResponseEntity.badRequest().body(ResponseMessage.DELETE_TOUR_LOG_FAIL.getResponseStatus());
         }
     }
 }

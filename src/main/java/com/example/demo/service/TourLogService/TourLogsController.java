@@ -39,4 +39,9 @@ public class TourLogsController {
         this.tourLogsRepo.save(tourLog);
         return true;
     }
+
+    public Boolean deleteTourLog(Integer id) {
+        this.tourLogsRepo.deleteById(id);
+        return true;
+    }
 }
